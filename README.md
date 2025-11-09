@@ -1,0 +1,1 @@
+## Simple FastAPI server that creates thumbnails of websites without having to visit them
