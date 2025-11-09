@@ -1,6 +1,8 @@
-FROM python:3.12
+FROM debian:bookworm
 
 RUN apt-get update && apt-get install -y \
+    python3 \
+    python3-pip \
     libglib2.0-0 \
     libnss3 \
     libgconf-2-4 \
@@ -28,7 +30,7 @@ RUN apt-get update && apt-get install -y \
 
 WORKDIR /
 COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip3 install --no-cache-dir -r requirements.txt
 
 COPY ./src ./src
 
