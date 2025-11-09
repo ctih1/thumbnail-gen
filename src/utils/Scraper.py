@@ -29,7 +29,7 @@ class FakeBrowser:
 
         if Path(save_path).exists() and not force_refresh:
             logger.info("Path already exists, returning")
-            return Path(sanitized_url)
+            return Path(save_path)
         
         logger.info(f"Capturing webpage")
 
