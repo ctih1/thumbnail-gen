@@ -1,5 +1,7 @@
 services:
   web:
+    restart: unless-stopped
     build: .
     ports:
       - "8123:8000"
+
