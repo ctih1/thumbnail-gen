@@ -1,9 +1,9 @@
 from fastapi import FastAPI
-from views.thumbnail import Thumbnail
+from .views.thumbnail import Thumbnail
 import uvicorn
-import os
 import logging
 import sys
+import os
 
 
 logging.basicConfig(
@@ -13,8 +13,6 @@ logging.basicConfig(
     stream=sys.stdout,
 )
 
-
-os.environ["PYPPETEER_CHROMIUM_REVISION"] = "1263111"
 
 app = FastAPI()
 app.include_router(Thumbnail().router)

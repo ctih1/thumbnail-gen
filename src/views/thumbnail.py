@@ -1,5 +1,5 @@
 from fastapi import APIRouter, HTTPException, Response
-from utils.Scraper import FakeBrowser
+from ..utils.Scraper import FakeBrowser
 from playwright.async_api import Browser, Page, async_playwright, Playwright
 from pathlib import Path
 
