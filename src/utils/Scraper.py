@@ -25,7 +25,7 @@ class FakeBrowser:
         logger.info(f"Getting page {url[:64]}")
         sanitized_url: str = FakeBrowser.sanitize_url(url)
 
-        save_path: str = f"/tmp/{sanitized_url}.png"
+        save_path: str = f"/tmp/{sanitized_url}.jpg"
 
         if Path(save_path).exists() and not force_refresh:
             logger.info("Path already exists, returning")
@@ -39,5 +39,5 @@ class FakeBrowser:
             logger.error(e)
             return None
         
-        await self.page.screenshot(path=save_path, type="png", animations="disabled")
+        await self.page.screenshot(path=save_path, type="jpeg", animations="disabled")
         return Path(save_path)

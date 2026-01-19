@@ -39,4 +39,4 @@ class Thumbnail:
         if path is None:
             raise HTTPException(status_code=400, detail="Page load error")
         
-        return Response(content=path.read_bytes(), media_type="image/png")
+        return Response(content=path.read_bytes(), media_type="image/jpeg")
